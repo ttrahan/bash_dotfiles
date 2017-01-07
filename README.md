@@ -6,4 +6,4 @@ The .bash_profile file is maintained in this directory and sym-linked to the
 $HOME directory
 
   * From home directory:  
-    ``` ln -s ~/bash_dotfiles/.bash_profile . ```
+    ``` ln -s ~/dotfiles/.bash_profile . ```
