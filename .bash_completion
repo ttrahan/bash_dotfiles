@@ -1,38 +1,31 @@
 #! /bin/bash -e
 
-declare -A pairs
-pairs=( \
+# add name and path to Bash Completion binaries that can be sourced directly
+# below
+declare -A pairsSourced
+pairsSourced=( \
   [Google Cloud SDK]=$HOME'/google-cloud-sdk/completion.bash.inc' \
-  [test2]=test2 \
+  [Docker Machine]=$HOME'/.docker-machine-completion.sh' \
+  [Git]=$HOME'/.git-completion.bash' \
+  [AWS CLI]=/usr/local/bin/aws_completer \
 )
 
-for i in "${!pairs[@]}"; do
-  j=${pairs[$i]}
-  echo "$i.txt" "$j.txt"
+for i in "${!pairsSourced[@]}"; do
+  j=${pairsSourced[$i]}
+  if [[ -f $j ]]; then
+    source $j
+  else
+    echo $i' bash completion not found...not loaded'
+  fi
 done
 
+# load Bash completion binaries that can't be sourced directly below
 
-# Enable bash completion for gcloud.
-if [[ -f $HOME'/google-cloud-sdk/completion.bash.inc' ]]; then
-  source $HOME'/google-cloud-sdk/completion.bash.inc'
+# AWS CLI
+i="AWS CLI"
+j=/usr/local/bin/aws_completer
+if [[ -f $j ]]; then
+  complete -C $j aws
 else
-  echo 'Google bash completion not found...not loaded'
+  echo $i' bash completion not found...not loaded'
 fi
-
-# Enable bash completion for docker machine
-if [[ -f $HOME'/.docker-machine-completion.sh' ]]; then
-  source $HOME'/.docker-machine-completion.sh'
-else
-  echo 'Docker Machine bash completion not found...not loaded'
-fi
-
-# enable bash completion for git
-if [[ -f $HOME'/.git-completion.bash' ]]; then
-  source $HOME'/.git-completion.bash'
-else
-  echo 'Git bash completion not found...not loaded'
-fi
-
-# enable bash completion for AWS CLI
-AWSCLI_DIR=/usr/local/bin/aws_completer
-complete -C $AWSCLI_DIR aws

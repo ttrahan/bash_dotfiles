@@ -11,8 +11,6 @@ export PATH=$PATH:/usr/local/bin/aws
 # Google Cloud SDK.
 if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
   source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
-else
-  echo 'Google Cloud SDK not found...not added to path'
 fi
 
 # Python 3.4
@@ -20,9 +18,7 @@ fi
 export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 
 # DC/OS CLI
-if [[ "$PATH" != *"/Users/tomtra/dcos/bin"* ]];
-  then export PATH=$PATH:/Users/tomtra/dcos/bin;
-fi
+export PATH=$PATH:/Users/tomtra/dcos/bin;
 
 # Terraform
 export PATH=$PATH:$HOME/third-party-tools/terraform
@@ -34,7 +30,7 @@ export PATH="$PATH:/usr/lib/phantomjs-2.0.0-macosx/bin"
 export PATH=$PATH:/usr/local/Cellar/mongodb/3.0.7
 
 # Google App Engine
-export PATH=/usr/local/bin/go_appengine:$PATH
+export PATH=$PATH:/usr/local/bin/go_appengine
 
 # MySQL
-export PATH=/usr/local/mysql/bin:$PATH
+export PATH=$PATH:/usr/local/mysql/bin
