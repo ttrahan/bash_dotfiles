@@ -1,24 +1,36 @@
 #! /bin/bash -e
 
 # export paths
-export PATH="${GOPATH//://bin:}/bin:$PATH"
-export PATH=$HOME"/ose3:${PATH}"
-export PATH=$PATH:$HOME/third-party-tools/terraform
-export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:/usr/lib/phantomjs-2.0.0-macosx/bin"
-export PATH=$PATH:/usr/local/Cellar/mongodb/3.0.7
-export PATH=$PATH:/usr/local/bin/aws
-export PATH=/usr/local/bin/go_appengine:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
 
-# Update PATH for the Google Cloud SDK.
+# Local binaries
+export PATH="$PATH:$HOME/bin"
+
+# AWS CLI
+export PATH=$PATH:/usr/local/bin/aws
+
+# Google Cloud SDK.
 source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
 
-# Setting PATH for Python 3.4
+# Python 3.4
 # The original version is saved in .bash_profile.pysave
 export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 
-# path to the DC/OS CLI binary
+# DC/OS CLI
 if [[ "$PATH" != *"/Users/tomtra/dcos/bin"* ]];
   then export PATH=$PATH:/Users/tomtra/dcos/bin;
 fi
+
+# Terraform
+export PATH=$PATH:$HOME/third-party-tools/terraform
+
+# PhantomJS
+export PATH="$PATH:/usr/lib/phantomjs-2.0.0-macosx/bin"
+
+# MongoDB
+export PATH=$PATH:/usr/local/Cellar/mongodb/3.0.7
+
+# Google App Engine
+export PATH=/usr/local/bin/go_appengine:$PATH
+
+# MySQL
+export PATH=/usr/local/mysql/bin:$PATH
