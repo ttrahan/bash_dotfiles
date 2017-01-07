@@ -1,0 +1,16 @@
+#! /bin/bash -e
+
+# Enable bash completion for gcloud.
+source $HOME'/google-cloud-sdk/completion.bash.inc'
+
+# Enable bash completion for docker machine
+. ~/.docker-machine-completion.sh
+
+# enable bash completion for git
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+# enable bash completion for AWS CLI
+AWSCLI_DIR=/usr/local/bin/aws_completer
+complete -C $AWSCLI_DIR aws

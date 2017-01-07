@@ -1,0 +1,29 @@
+#! /bin/bash -e
+
+# create zip folder of all files stored in encrypted volume - Keys
+function archiveDriveKeys() {
+	zip -er keysArchive.zip /Volumes/Keys/
+}
+
+# reloadDefaultSSH key file (necessary after OS patch, etc.)
+function audio-fix() {
+	sudo kextunload /System/Library/Extensions/AppleHDA.kext
+	sudo kextload /System/Library/Extensions/AppleHDA.kext
+	echo -e "\n*** processing complete - ${BASH_SOURCE[0]} ***"
+}
+
+# unmount encrypted volume - Keys
+function detachDriveKeys() {
+	hdiutil detach ~/keys.dmg
+}
+
+# connect to Docker-Machine environment (arg1)
+function dme() {
+	eval $(docker-machine env ${1})
+	docker-machine active
+}
+
+# mount encrypted volume - Keys
+function mountDriveKeys() {
+	hdiutil attach ~/keys.dmg
+}

@@ -1,0 +1,71 @@
+#! /bin/bash -e
+
+# refresh shell
+alias reload='source ~/.bash_profile'
+
+# set alias to use this version of Vim
+alias vim2='/Applications/MacVim.app'
+
+# set alias to use this version of python
+alias python='python3'
+alias pip='pip3'
+
+# alias ls command to colorize, make size human readable, add type indicator
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
+
+# git commamands simplified
+alias gst='git status'
+alias gco='git checkout'
+alias gci='git commit -m'
+alias grb='git rebase'
+alias gbr='git branch'
+alias gad='git add -A'
+alias gpl='git pull'
+alias gpu='git push'
+alias gpuo='git push origin'
+alias gpuom='git push origin master'
+alias grv='git remote -v'
+alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+alias glg2='git log --date-order --all --graph --name-status --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+alias ghs='git hist'
+
+# docker commands simplified
+# **************************
+# connect to Shippable's Docker Data Center environment
+alias ddc-ship='source /Users/tomtra/ddc/bundle-ttrahan/env.sh'
+# reset Docker env variables to Docker for Mac settings
+alias dfm='unset ${!DOCKER_*}'
+# connect to Joyent Triton cloud environment in us-east-1
+alias dtrit='eval "$(triton env --docker us-east-1)"'
+
+# commonly used ssh connections
+# *******************************
+# connect to tom.trahan Azure ACS-DCOS cluster
+alias ssh-acs-dcos='sudo ssh -L 80:localhost:80 -f -N azureuser@shipdemo-dcosmgmt.westus.cloudapp.azure.com -p 2200 -i /Users/tomtra/.ssh/id_rsa_shipdemo_azure'
+
+
+# lock computer
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+
+# hibernation and sleep settings
+alias hibernate='sudo pmset -a hibernatemode 25'
+alias sleep='sudo pmset -a hibernatemode 0'
+alias safesleep='sudo pmset -a hibernatemode 3'
+alias smartsleep='sudo pmset -a hibernatemode 2'
+
+# up 'n' folders
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# simple ip
+alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
+# more details
+alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+# external ip
+alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
+
+# grep with color
+alias grep='grep --color=auto'
