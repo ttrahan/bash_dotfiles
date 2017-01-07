@@ -1,14 +1,36 @@
 #! /bin/bash -e
 
+declare -A pairs
+pairs=( \
+  [Google Cloud SDK]=$HOME'/google-cloud-sdk/completion.bash.inc' \
+  [test2]=test2 \
+)
+
+for i in "${!pairs[@]}"; do
+  j=${pairs[$i]}
+  echo "$i.txt" "$j.txt"
+done
+
+
 # Enable bash completion for gcloud.
-source $HOME'/google-cloud-sdk/completion.bash.inc'
+if [[ -f $HOME'/google-cloud-sdk/completion.bash.inc' ]]; then
+  source $HOME'/google-cloud-sdk/completion.bash.inc'
+else
+  echo 'Google bash completion not found...not loaded'
+fi
 
 # Enable bash completion for docker machine
-. ~/.docker-machine-completion.sh
+if [[ -f $HOME'/.docker-machine-completion.sh' ]]; then
+  source $HOME'/.docker-machine-completion.sh'
+else
+  echo 'Docker Machine bash completion not found...not loaded'
+fi
 
 # enable bash completion for git
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [[ -f $HOME'/.git-completion.bash' ]]; then
+  source $HOME'/.git-completion.bash'
+else
+  echo 'Git bash completion not found...not loaded'
 fi
 
 # enable bash completion for AWS CLI

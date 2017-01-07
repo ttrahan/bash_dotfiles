@@ -9,7 +9,11 @@ export PATH="$PATH:$HOME/bin"
 export PATH=$PATH:/usr/local/bin/aws
 
 # Google Cloud SDK.
-source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
+if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
+  source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
+else
+  echo 'Google Cloud SDK not found...not added to path'
+fi
 
 # Python 3.4
 # The original version is saved in .bash_profile.pysave
