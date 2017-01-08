@@ -5,7 +5,8 @@
 # add name and path to binaries that can be exported directly below
 declare -A pairs
 pairs=( \
-  [Local binaries]=$HOME'/bin' \
+  [User local bin]=$HOME'/bin' \
+  [Local sbin]=/usr/local/sbin \
   [AWS CLI]=/usr/local/bin/aws \
   [Python 3.6]=/usr/local/bin/python3 \
   [DC/OS CLI]=$HOME'/dcos/bin' \
@@ -18,7 +19,7 @@ pairs=( \
 
 for i in "${!pairs[@]}"; do
   j=${pairs[$i]}
-  if [[ -f $j ]]; then
+  if [[ -f $j ]] || [[ -d $j ]]; then
     export PATH="$PATH:$j"
   else
     echo $i' not found in '$j'..not loaded to path'
