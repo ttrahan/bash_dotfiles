@@ -4,10 +4,8 @@
 # below
 declare -A pairsSourced
 pairsSourced=( \
-  [Google Cloud SDK]=$HOME'/google-cloud-sdk/completion.bash.inc' \
-  [Docker Machine]=$HOME'/.docker-machine-completion.sh' \
   [Git]=$HOME'/.git-completion.bash' \
-  [AWS CLI]=/usr/local/bin/aws_completer \
+  [Google Cloud SDK]=$HOME'/google-cloud-sdk/completion.bash.inc' \
 )
 
 for i in "${!pairsSourced[@]}"; do

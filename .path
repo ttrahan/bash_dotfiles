@@ -2,35 +2,62 @@
 
 # export paths
 
-# Local binaries
-export PATH="$PATH:$HOME/bin"
+# add name and path to binaries that can be exported directly below
+declare -A pairs
+pairs=( \
+  [Local binaries]=$HOME'/bin' \
+  [AWS CLI]=/usr/local/bin/aws \
+  [Python 3.6]=/usr/local/bin/python3 \
+  [DC/OS CLI]=$HOME'/dcos/bin' \
+  [Terraform CLI]=$HOME'/tools/terraform' \
+  [PhantomJS]=/usr/lib/phantomjs-2.0.0-macosx/bin \
+  [MongoDB (Brew)]=/usr/local/bin/mongo \
+  [MySQL]=/usr/local/mysql/bin \
+  [jq]=/usr/local/bin/jq \
+)
 
-# AWS CLI
-export PATH=$PATH:/usr/local/bin/aws
+for i in "${!pairs[@]}"; do
+  j=${pairs[$i]}
+  if [[ -f $j ]]; then
+    export PATH="$PATH:$j"
+  else
+    echo $i' not found..not loaded to path'
+  fi
+done
+
+# add to Path binaries that can't be exported directly below
 
 # Google Cloud SDK.
 if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
   source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
 fi
 
-# Python 3.4
-# The original version is saved in .bash_profile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 
-# DC/OS CLI
-export PATH=$PATH:/Users/tomtra/dcos/bin;
 
-# Terraform
-export PATH=$PATH:$HOME/third-party-tools/terraform
-
-# PhantomJS
-export PATH="$PATH:/usr/lib/phantomjs-2.0.0-macosx/bin"
-
-# MongoDB
-export PATH=$PATH:/usr/local/Cellar/mongodb/3.0.7
-
-# Google App Engine
-export PATH=$PATH:/usr/local/bin/go_appengine
-
-# MySQL
-export PATH=$PATH:/usr/local/mysql/bin
+# # Local binaries
+# export PATH="$PATH:$HOME/bin"
+#
+# # AWS CLI
+# export PATH=$PATH:/usr/local/bin/aws
+#
+# # Python 3.4
+# # The original version is saved in .bash_profile.pysave
+# export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+#
+# # DC/OS CLI
+# export PATH=$PATH:/Users/tomtra/dcos/bin;
+#
+# # Terraform
+# export PATH=$PATH:$HOME/third-party-tools/terraform
+#
+# # PhantomJS
+# export PATH="$PATH:/usr/lib/phantomjs-2.0.0-macosx/bin"
+#
+# # MongoDB
+# export PATH=$PATH:/usr/local/Cellar/mongodb/3.0.7
+#
+# # Google App Engine
+# export PATH=$PATH:/usr/local/bin/go_appengine
+#
+# # MySQL
+# export PATH=$PATH:/usr/local/mysql/bin
