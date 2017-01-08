@@ -9,7 +9,7 @@ pairs=( \
   [AWS CLI]=/usr/local/bin/aws \
   [Python 3.6]=/usr/local/bin/python3 \
   [DC/OS CLI]=$HOME'/dcos/bin' \
-  [Terraform CLI]=$HOME'/tools/terraform' \
+  [Terraform CLI]=$HOME'/tools/terraform/terraform' \
   [PhantomJS]=/usr/lib/phantomjs-2.0.0-macosx/bin \
   [MongoDB (Brew)]=/usr/local/bin/mongo \
   [MySQL]=/usr/local/mysql/bin \
@@ -21,7 +21,7 @@ for i in "${!pairs[@]}"; do
   if [[ -f $j ]]; then
     export PATH="$PATH:$j"
   else
-    echo $i' not found..not loaded to path'
+    echo $i' not found in '$j'..not loaded to path'
   fi
 done
 
