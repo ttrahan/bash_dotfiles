@@ -15,6 +15,7 @@ pairs=( \
   [MongoDB (Brew)]=/usr/local/bin/mongo \
   [MySQL]=/usr/local/mysql/bin \
   [jq]=/usr/local/bin/jq \
+  [gettext]=/usr/local/bin/gettext \
 )
 
 for i in "${!pairs[@]}"; do
@@ -33,32 +34,8 @@ if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
   source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
 fi
 
+# virtualenvwrapper (for Python)
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+  source '/usr/local/bin/virtualenvwrapper.sh'
+fi
 
-
-# # Local binaries
-# export PATH="$PATH:$HOME/bin"
-#
-# # AWS CLI
-# export PATH=$PATH:/usr/local/bin/aws
-#
-# # Python 3.4
-# # The original version is saved in .bash_profile.pysave
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-#
-# # DC/OS CLI
-# export PATH=$PATH:/Users/tomtra/dcos/bin;
-#
-# # Terraform
-# export PATH=$PATH:$HOME/third-party-tools/terraform
-#
-# # PhantomJS
-# export PATH="$PATH:/usr/lib/phantomjs-2.0.0-macosx/bin"
-#
-# # MongoDB
-# export PATH=$PATH:/usr/local/Cellar/mongodb/3.0.7
-#
-# # Google App Engine
-# export PATH=$PATH:/usr/local/bin/go_appengine
-#
-# # MySQL
-# export PATH=$PATH:/usr/local/mysql/bin
