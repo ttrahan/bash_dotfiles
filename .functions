@@ -27,3 +27,9 @@ function dme() {
 function mountDriveKeys() {
 	hdiutil attach ~/keys.dmg
 }
+
+# launch RabbitMQ server with increased per-user limit on open files
+function launchRabbitMQ() {
+		ulimit -S -n 4096
+		rabbitmq-server
+}
