@@ -10,13 +10,15 @@ let mapleader = "\<Space>"
 
 " basics
 filetype plugin indent on
-set background=dark
-syntax on
 set encoding=utf-8
+set t_Co=16
+syntax enable
 " Solarized options
-let g:solarized_visibility="high"
-let g:solarized_contrast="high"
+let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
+" let g:solarized_visibility="high"
+" let g:solarized_contrast="high"
+set background=dark
 colorscheme solarized
 
 " tabs to spaces conversion
