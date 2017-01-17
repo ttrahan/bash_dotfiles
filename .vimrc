@@ -1,4 +1,7 @@
 
+" add runtime path manipulation to Vim
+execute pathogen#infect()
+
 " remap the action to leave Insert mode
 inoremap jk <ESC>
 
@@ -7,11 +10,14 @@ let mapleader = "\<Space>"
 
 " basics
 filetype plugin indent on
+set background=dark
 syntax on
 set encoding=utf-8
-
-" add runtime path manipulation to Vim
-execute pathogen#infect()
+" Solarized options
+let g:solarized_visibility="high"
+let g:solarized_contrast="high"
+let g:solarized_termcolors=16
+colorscheme solarized
 
 " tabs to spaces conversion
 filetype plugin indent on
@@ -34,3 +40,13 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " make an always visible list of buffers (press Tab on command line)
 set wildchar=<Tab> wildmenu wildmode=full
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
