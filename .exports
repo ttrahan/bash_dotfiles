@@ -26,3 +26,6 @@ export MANTA_KEY_ID=49:2f:a8:ce:67:a7:4e:4a:8f:70:e6:6a:3c:1d:d6:4a;
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'

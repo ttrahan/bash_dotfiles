@@ -42,3 +42,9 @@ function launchRabbitMQ() {
 		ulimit -S -n 4096
 		rabbitmq-server
 }
+
+# bounce mDNSResponder, used when DNS resolution not working on Mac
+function udfBounceDns() {
+  sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+}
