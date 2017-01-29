@@ -2,9 +2,9 @@
 
 Configuration files I use to customize my dev environment
 
-Installation:  
+Installation with submodules for .vim bundles:  
 ```
-git clone git@github.com:ttrahan/dotfiles.git
+git clone --recursive git@github.com:ttrahan/dotfiles.git
 ```
 
 
