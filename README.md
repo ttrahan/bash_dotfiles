@@ -35,7 +35,7 @@ pip2 install neovim --upgrade
 pip3 install neovim --upgrade
 ```
 
-These files assume use of Bash 4.x. Upgrade on a Mac as follows:
+Some of files require Bash 4.x (e.g. .path). Upgrade on a Mac as follows:
   * Update homebrew packet database and install bash:
     ```
     $ brew update && brew install bash
