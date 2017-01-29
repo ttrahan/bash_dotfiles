@@ -17,8 +17,7 @@ ln -s ~/dotfiles/.hammerspoon/ ~
 
 Update submodules:
 ```bash
-git pull --recurse-submodules
-git submodule update --remote --recursive
+git submodule foreach git pull
 ```
 
 
