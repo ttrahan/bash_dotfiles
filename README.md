@@ -2,15 +2,16 @@
 
 Configuration files I use to customize my dev environment
 
-The following files/directories are maintained in this directory and sym-linked to the
-$HOME directory:
-* .bash_profile
-* .vim/
+Installation:
+`git clone git@github.com:ttrahan/dotfiles.git`
 
-  * From home directory:  
-    ```
-    ln -s ~/dotfiles/.bash_profile .
-    ```
+Create symlinks to $HOME directory:
+```bash
+ln -s ~/dotfiles/.bash_profile ~
+ln -s ~/dotfiles/.vim/ ~
+ln -s ~/dotfiles/.vimrc ~
+ln -s ~/dotfiles/.hammerspoon/ ~
+```
 
 These files assume use of Bash 4.x. Upgrade on a Mac as follows:
   * Update homebrew packet database and install bash:
