@@ -26,7 +26,7 @@ To update submodules:
 git submodule foreach git pull
 ```
 
-To use Neovim and Python-enabled Vim plugins:
+To use Neovim and Python-enabled Vim plugins (note 'vim' aliased to 'nvim' by default - remove from .aliases if not using Neovim):
 ```bash
 brew install neovim/neovim/neovim
 brew install python
