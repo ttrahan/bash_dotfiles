@@ -5,8 +5,3 @@ for file in ~/dotfiles/.{path,bash_prompt,bash_completion,exports,aliases,functi
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-# Setting PATH for Python 3.5
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
