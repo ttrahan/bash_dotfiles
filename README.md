@@ -2,11 +2,6 @@
 
 Configuration files I use to customize my dev environment
 
-Install preferred Vim editor via Homebrew:
-```
-brew install neovim/neovim/neovim
-```
-
 Installation with submodules for .vim bundles:  
 ```
 git clone --recursive git@github.com:ttrahan/dotfiles.git
@@ -31,7 +26,7 @@ Update submodules:
 git submodule foreach git pull
 ```
 
-To install Neovim and use Python-enabled Vim plugins:
+To use Neovim and Python-enabled Vim plugins:
 ```bash
 brew install neovim/neovim/neovim
 brew install python
