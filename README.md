@@ -2,6 +2,11 @@
 
 Configuration files I use to customize my dev environment
 
+Install preferred Vim editor via Homebrew:
+```
+brew install neovim/neovim/neovim
+```
+
 Installation with submodules for .vim bundles:  
 ```
 git clone --recursive git@github.com:ttrahan/dotfiles.git
@@ -10,9 +15,15 @@ git clone --recursive git@github.com:ttrahan/dotfiles.git
 Create symlinks to $HOME directory:
 ```bash
 ln -s ~/dotfiles/.bash_profile ~
-ln -s ~/dotfiles/.vim/ ~
+# for Vim config
+ln -s ~/dotfiles/.vim ~
 ln -s ~/dotfiles/.vimrc ~
+# for MacOS automation via Hammerspoon
 ln -s ~/dotfiles/.hammerspoon/ ~
+# for Neovim
+ln -s ~/dotfiles/.vim ~/dotfiles/.config/nvim
+ln -s ~/dotfiles/.vimrc ~/dotfiles/.config/nvim/init.vim
+ln -s ~/dotfiles/.config/nvim ~/.config
 ```
 
 Update submodules:
@@ -20,6 +31,14 @@ Update submodules:
 git submodule foreach git pull
 ```
 
+To install Neovim and use Python-enabled Vim plugins:
+```bash
+brew install neovim/neovim/neovim
+brew install python
+brew install python3
+pip2 install neovim --upgrade
+pip3 install neovim --upgrade
+```
 
 These files assume use of Bash 4.x. Upgrade on a Mac as follows:
   * Update homebrew packet database and install bash:

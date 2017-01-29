@@ -3,7 +3,7 @@ window: move active screen to left half - mash-"Left"
 window: move active screen to left half - mash-"Right"
 window: maximize active screen - mash-"Up"
 window: minimize active screen - mash-"Down"
-screens: re-apply monitor layout - mash-S
+screens: re-apply monitor layout - mash-D
 system: lock screen - mashshift-L
 system: put machine into sleep mode - mashshift-S
 ]]--
@@ -117,7 +117,7 @@ local syncmasterLayout = {
     {"Google Chrome", nil, monitorScreen1, hs.layout.maximized, nil, nil},
     {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
-    {"iTerm2", nil, monitorScreen1, hs.layout.right50, nil, nil},    
+    {"iTerm2", nil, monitorScreen1, hs.layout.right50, nil, nil},
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"REAPER", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
