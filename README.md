@@ -21,7 +21,7 @@ ln -s ~/dotfiles/.vimrc ~/dotfiles/.config/nvim/init.vim
 ln -s ~/dotfiles/.config/nvim ~/.config
 ```
 
-Update submodules:
+To update submodules:
 ```bash
 git submodule foreach git pull
 ```
