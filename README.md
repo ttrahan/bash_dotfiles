@@ -2,8 +2,11 @@
 
 Configuration files I use to customize my dev environment
 
-Installation:
-`git clone git@github.com:ttrahan/dotfiles.git`
+Installation:  
+```
+git clone git@github.com:ttrahan/dotfiles.git
+```
+
 
 Create symlinks to $HOME directory:
 ```bash
