@@ -107,17 +107,19 @@ end)
 local laptopLayout = {
     {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Safari", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"Atom", nil, laptopScreen, hs.layout.left50, nil, nil},
     {"REAPER", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
+    {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Atom", nil, laptopScreen, hs.layout.left50, nil, nil},
+    {"iTerm2", nil, laptopScreen, hs.layout.right50, nil, nil}
 }
 local syncmasterLayout = {
     {"Google Chrome", nil, monitorScreen1, hs.layout.maximized, nil, nil},
-    {"Safari", nil, monitorScreen1, hs.layout.right50, nil, nil},
+    {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
-    {"REAPER", nil, monitorScreen1, hs.layout.maximized, nil, nil},
+    {"iTerm2", nil, monitorScreen1, hs.layout.right50, nil, nil},    
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"REAPER", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
 if hs.screen.findByName("SyncMaster") then
