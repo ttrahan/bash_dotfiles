@@ -1,6 +1,6 @@
 --[[ hotkey glossary
 window: move active screen to left half - mash-"Left"
-window: move active screen to left half - mash-"Right"
+window: move active screen to right half - mash-"Right"
 window: maximize active screen - mash-"Up"
 window: minimize active screen - mash-"Down"
 screens: re-apply monitor layout - mash-D
@@ -103,6 +103,28 @@ hs.hotkey.bind(mash, "Down", function()
   win:minimize()
 end)
 
+hs.hotkey.bind(mashshift, "Up", function()
+  local win = hs.window.focusedWindow()
+  local new_screen = win:screen():next():frame()
+  local old_screen = win:screen():frame()
+
+  if hs.screen.findByName("SyncMaster") then
+      hs.layout.apply(syncmasterLayout)
+  else
+      hs.layout.apply(laptopLayout)
+  end
+
+end)
+
+-- function to move active window to other screen
+function moveWindowNextScreen()
+  local win = hs.window.focusedWindow()
+  local new_screen = win:screen():next()
+  win:moveToScreen(new_screen,true,true)
+end
+
+hs.hotkey.bind(mash, 'N', moveWindowNextScreen)
+
 -- WINDOW: arrange app windows to available screens
 local laptopLayout = {
     {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil},
@@ -118,8 +140,8 @@ local syncmasterLayout = {
     {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"iTerm2", nil, monitorScreen1, hs.layout.right50, nil, nil},
+    {"REAPER", nil, monitorScreen1, hs.layout.maximized, nil, nil},
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"REAPER", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
 if hs.screen.findByName("SyncMaster") then
