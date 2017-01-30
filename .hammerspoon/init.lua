@@ -19,11 +19,6 @@ hs.window.animationDuration = 0
 local mash      = {"cmd", "alt", "ctrl"}
 local mashshift = {"cmd", "alt", "ctrl", "shift"}
 
--- Define monitor names for layout purposes
-local laptopScreen = "Color LCD"
-local monitorScreen1 = "SyncMaster"
--- local monitorScreen2 = "Dell "
-
 -- Define audio device names for headphone/speaker switching
 local speakerDevice = "UMC+XR18"
 local mixerDevice = "X18/XR18"
@@ -108,6 +103,11 @@ end
 hs.hotkey.bind(mash, 'N', moveWindowNextScreen)
 
 -- WINDOW: arrange app windows to available screens
+-- define monitor names for layout purposes
+local laptopScreen = "Color LCD"
+local monitorScreen1 = "SyncMaster"
+local monitorScreen2 = "DELL P2815Q"
+
 local laptopLayout = {
     {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Safari", nil, laptopScreen, hs.layout.maximized, nil, nil},
@@ -126,8 +126,21 @@ local syncmasterLayout = {
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
-if hs.screen.findByName("SyncMaster") then
+local dellLayout = {
+    {"Keynote", nil, monitorScreen2, hs.layout.maximized, nil, nil},
+    {"Safari", nil, monitorScreen2, hs.layout.left50, nil, nil},
+    {"Evernote", nil, monitorScreen2, hs.layout.left50, nil, nil},
+    {"Atom", nil, monitorScreen2, hs.layout.left50, nil, nil},
+    {"iTerm2", nil, monitorScreen2, hs.layout.right50, nil, nil},
+    {"Finder", nil, laptopScreen, hs.layout.left70, nil, nil},
+    {"TextEdit", nil, laptopScreen, hs.layout.right30, nil, nil},
+    {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil}
+}
+if hs.screen.findByName(monitorScreen1) then
     hs.layout.apply(syncmasterLayout)
+elseif hs.screen.findByName(monitorScreen2) then
+    hs.layout.apply(dellLayout)
 else
     hs.layout.apply(laptopLayout)
 end
