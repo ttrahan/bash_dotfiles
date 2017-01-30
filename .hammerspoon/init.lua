@@ -45,84 +45,66 @@ local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", relo
 hs.alert.show("Config loaded")
 
 -- HOTKEY: lock screen shortcut
-hs.hotkey.bind(mashshift, 'L', function()
+function lockScreen()
   hs.caffeinate.lockScreen()
-end)
+end
+hs.hotkey.bind(mashshift, 'L', lockScreen)
 
--- HOTKEY: lock screen shortcut
-hs.hotkey.bind(mashshift, 'S', function()
+function goToSleep()
   hs.caffeinate.systemSleep()
-end)
+end
+hs.hotkey.bind(mashshift, 'S', goToSleep)
 
--- WINDOW: move or resize active screen
---  move active screen to left half {"cmd", "alt", "ctrl"}, "Left"
---  maximize active screen to entire screen {"cmd", "alt", "ctrl"}, "Up"
---  move active screen to left half {"cmd", "alt", "ctrl"}, "Right"
---  move active screen to left half {"cmd", "alt", "ctrl"}, "Down"
-hs.hotkey.bind(mash, "Left", function()
+-- WINDOW: move or resize active window
+function moveWindowLeftHalf()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
-
   f.x = max.x
   f.y = max.y
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f)
-end)
+end
+hs.hotkey.bind(mash, "Left", moveWindowLeftHalf)
 
-hs.hotkey.bind(mash, "Right", function()
+function moveWindowRightHalf()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
-
   f.x = max.x + (max.w / 2)
   f.y = max.y
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f)
-end)
+end
+hs.hotkey.bind(mash, "Right", moveWindowRightHalf)
 
-hs.hotkey.bind(mash, "Up", function()
+function maximizeCurrentWindow()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
-
   win:maximize()
-end)
+end
+hs.hotkey.bind(mash, "Up", maximizeCurrentWindow)
 
-hs.hotkey.bind(mash, "Down", function()
+function minimizeCurrentWindow()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
-
   win:minimize()
-end)
+end
+hs.hotkey.bind(mash, "Down", minimizeCurrentWindow)
 
-hs.hotkey.bind(mashshift, "Up", function()
-  local win = hs.window.focusedWindow()
-  local new_screen = win:screen():next():frame()
-  local old_screen = win:screen():frame()
-
-  if hs.screen.findByName("SyncMaster") then
-      hs.layout.apply(syncmasterLayout)
-  else
-      hs.layout.apply(laptopLayout)
-  end
-
-end)
-
--- function to move active window to other screen
 function moveWindowNextScreen()
   local win = hs.window.focusedWindow()
   local new_screen = win:screen():next()
   win:moveToScreen(new_screen,true,true)
 end
-
 hs.hotkey.bind(mash, 'N', moveWindowNextScreen)
 
 -- WINDOW: arrange app windows to available screens
