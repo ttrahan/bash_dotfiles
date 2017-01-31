@@ -1,9 +1,10 @@
 --[[ hotkey glossary
-window: move active screen to left half - mash-"Left"
-window: move active screen to right half - mash-"Right"
-window: maximize active screen - mash-"Up"
-window: minimize active screen - mash-"Down"
-screens: re-apply monitor layout - mash-D
+window: move active screen to left half - mash-Left
+window: move active screen to right half - mash-Right
+window: maximize active screen - mash-Up
+window: minimize active screen - mash-Down
+windoe: move active window to next screen - mash-N
+screens: re-apply monitor layout - mash-M
 system: lock screen - mashshift-L
 system: put machine into sleep mode - mashshift-S
 ]]--
@@ -137,14 +138,14 @@ local dellLayout = {
     {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
-if hs.screen.findByName(monitorScreen1) then
-    hs.layout.apply(syncmasterLayout)
-elseif hs.screen.findByName(monitorScreen2) then
-    hs.layout.apply(dellLayout)
-else
-    hs.layout.apply(laptopLayout)
+function applyMonitorLayout ()
+  if hs.screen.findByName(monitorScreen1) then
+      hs.layout.apply(syncmasterLayout)
+  elseif hs.screen.findByName(monitorScreen2) then
+      hs.layout.apply(dellLayout)
+  else
+      hs.layout.apply(laptopLayout)
+  end
 end
 -- HOTKEY: re-apply display arrangement
-hs.hotkey.bind(mash, 'D', function()
-  hs.layout.apply(syncmasterLayout)
-end)
+hs.hotkey.bind(mash, 'M', applyMonitorLayout)
