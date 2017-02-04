@@ -12,6 +12,7 @@ pairs=( \
   [AWS CLI]=/usr/local/bin/aws \
   [DC/OS CLI]=$HOME'/dcos/bin' \
   [Terraform CLI]=$HOME'/tools/terraform/terraform' \
+  [Cobra CLI]=$GOPATH/bin \
   # installed via Homebrew
   [Python 3.6 (Homebrew)]=/usr/local/bin/python3 \
   [MongoDB (Homebrew)]=/usr/local/bin/mongo \
@@ -20,6 +21,7 @@ pairs=( \
   [gettext (Homebrew)]=/usr/local/bin/gettext \
   # other
   [PhantomJS 2.1]=/Users/tomtra/tools/phantomjs-2.1.1-macosx/bin/phantomjs \
+  [Go]=/usr/local/go/bin \
 )
 
 for i in "${!pairs[@]}"; do

@@ -100,6 +100,7 @@ function moveWindowNextScreen()
   local win = hs.window.focusedWindow()
   local new_screen = win:screen():next()
   win:moveToScreen(new_screen,true,true)
+  win:maximize()
 end
 hs.hotkey.bind(mash, 'N', moveWindowNextScreen)
 
@@ -115,15 +116,19 @@ local laptopLayout = {
     {"REAPER", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Atom", nil, laptopScreen, hs.layout.left50, nil, nil},
     {"iTerm2", nil, laptopScreen, hs.layout.right50, nil, nil}
 }
 local syncmasterLayout = {
-    {"Google Chrome", nil, monitorScreen1, hs.layout.maximized, nil, nil},
+    {"Google Chrome", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"iTerm2", nil, monitorScreen1, hs.layout.right50, nil, nil},
     {"REAPER", nil, monitorScreen1, hs.layout.maximized, nil, nil},
+    {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
@@ -133,7 +138,7 @@ local dellLayout = {
     {"Evernote", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"iTerm2", nil, monitorScreen2, hs.layout.right50, nil, nil},
-    {"Finder", nil, laptopScreen, hs.layout.left70, nil, nil},
+    {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"TextEdit", nil, laptopScreen, hs.layout.right30, nil, nil},
     {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil}

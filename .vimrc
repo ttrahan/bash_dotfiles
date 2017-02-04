@@ -1,3 +1,5 @@
+" search pattern to look for conflicting key mappings with new plugin:
+" \vn(nore)?map\s+\<c-[hjkl]\> (replace the <...> pattern with plugin values)
 
 " PACKAGE MANAGER 
 " add runtime path manipulation to Vim
@@ -44,6 +46,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " make an always visible list of buffers (press Tab on command line)
 set wildchar=<Tab> wildmenu wildmode=full
 
+" SPLITS
+set splitbelow
+set splitright
+
 " REGISTERS
 " List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
@@ -83,6 +89,7 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDAltDelims_java = 1
 " Add your own custom formats or override the defaults
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCustomDelimiters = { 'yaml': { 'left': '#','leftAlt': '//' } }
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
