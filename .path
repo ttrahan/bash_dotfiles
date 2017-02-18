@@ -12,7 +12,7 @@ pairs=( \
   [AWS CLI]=/usr/local/bin/aws \
   [DC/OS CLI]=$HOME'/dcos/bin' \
   [Terraform CLI]=$HOME'/tools/terraform/terraform' \
-  [Cobra CLI]=$GOPATH/bin \
+  [Go programs]=$GOPATH/bin \
   # installed via Homebrew
   [Python 3.6 (Homebrew)]=/usr/local/bin/python3 \
   [MongoDB (Homebrew)]=/usr/local/bin/mongo \

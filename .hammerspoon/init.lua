@@ -87,14 +87,40 @@ function maximizeCurrentWindow()
 end
 hs.hotkey.bind(mash, "Up", maximizeCurrentWindow)
 
-function minimizeCurrentWindow()
+function moveWindowTopHalf()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
-  win:minimize()
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
 end
-hs.hotkey.bind(mash, "Down", minimizeCurrentWindow)
+hs.hotkey.bind(mashshift, "Up", moveWindowTopHalf)
+
+function moveWindowBottomHalf()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+  f.x = max.x
+  f.y = max.y + (max.h / 2)
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end
+hs.hotkey.bind(mash, "Down", moveWindowBottomHalf)
+
+-- function minimizeCurrentWindow()
+--   local win = hs.window.focusedWindow()
+--   local f = win:frame()
+--   local screen = win:screen()
+--   local max = screen:frame()
+--   win:minimize()
+-- end
+-- hs.hotkey.bind(mash, "Down", minimizeCurrentWindow)
 
 function moveWindowNextScreen()
   local win = hs.window.focusedWindow()
