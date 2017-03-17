@@ -8,9 +8,9 @@ pairs=( \
   [home bin]=$HOME'/bin' \
   [home local bin]=$HOME'/local/bin' \
   [user local sbin]=/usr/local/sbin \
+  [Python 2.7]=/usr/bin/python2.7 \
   # CLIs
   [AWS CLI]=/usr/local/bin/aws \
-  [DC/OS CLI]=$HOME'/dcos/bin' \
   [Terraform CLI]=$HOME'/tools/terraform/terraform' \
   [Go programs]=$GOPATH/bin \
   # installed via Homebrew

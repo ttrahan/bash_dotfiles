@@ -23,6 +23,8 @@ set number
 " SPACING 
 " tabs to spaces conversion
 filetype plugin indent on
+" wrap indented lines at the indent level
+set breakindent
 " show existing tab with 4 spaces width
 set tabstop=2
 " when indenting with '>', use 4 spaces width
@@ -37,6 +39,8 @@ let mapleader = ","
 inoremap jk <ESC>
 " create mapping to delete a word with leader+d, doesn't add to register
 nnoremap <leader>d "_d
+" remap C-w to use leader key
+nnoremap <Leader>w <C-W>
 
 " BUFFERS 
 " Enable the list of buffers
