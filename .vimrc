@@ -8,15 +8,20 @@ execute pathogen#infect()
 " BASICS 
 filetype plugin indent on
 set encoding=utf-8
+set clipboard=unnamed
 
 " APPEARANCE
 set colorcolumn=80
-set t_Co=16 " for monrovia 
 set background=dark
-set termguicolors
-colorscheme monrovia
+" set t_Co=16 " for monrovia
+" set termguicolors
+" colorscheme monrovia
+" let g:solarized_termcolors=256
+colorscheme solarized
+
 " enable line numbers
 set number
+set relativenumber
 " highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE 
 " guifg=DarkGrey guibg=NONE
 
@@ -41,6 +46,11 @@ inoremap jk <ESC>
 nnoremap <leader>d "_d
 " remap C-w to use leader key
 nnoremap <Leader>w <C-W>
+" move by virtual lines when no count, physical lines if count
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+
 
 " BUFFERS 
 " Enable the list of buffers

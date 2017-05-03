@@ -51,3 +51,8 @@ function udfBounceDns() {
   sudo launchctl stop homebrew.mxcl.dnsmasq
   sudo launchctl start homebrew.mxcl.dnsmasq
 }
+
+# find files that match pattern passed in as argument
+function udfFindPattern() {
+  grep -rnw . -e "$1"
+}
