@@ -9,6 +9,7 @@ execute pathogen#infect()
 filetype plugin indent on
 set encoding=utf-8
 set clipboard=unnamed
+set mouse=a
 
 " APPEARANCE
 set colorcolumn=80
@@ -108,3 +109,6 @@ let g:NERDCustomDelimiters = { 'yaml': { 'left': '#','leftAlt': '//' } }
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+" TYPESCRIPT
+autocmd FileType typescript JsPreTmpl html
