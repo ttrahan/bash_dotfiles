@@ -14,3 +14,9 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tomtra/google-cloud-sdk/path.bash.inc' ]; then source '/Users/tomtra/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tomtra/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/tomtra/google-cloud-sdk/completion.bash.inc'; fi
