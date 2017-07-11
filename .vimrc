@@ -110,5 +110,9 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" TYPESCRIPT
+" Typescript settings
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost l* nested lwindow
 autocmd FileType typescript JsPreTmpl html
