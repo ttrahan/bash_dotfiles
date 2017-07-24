@@ -163,7 +163,7 @@ local dellLayout = {
     {"Evernote", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"iTerm2", nil, monitorScreen2, hs.layout.right50, nil, nil},
-    {"close.io.app", nil, monitorScreen2, hs.layout.maximized, nil, nil},
+    {"Close.io", nil, monitorScreen2, hs.layout.maximized, nil, nil},
     {"Keynote", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"TextEdit", nil, laptopScreen, hs.layout.right30, nil, nil},
