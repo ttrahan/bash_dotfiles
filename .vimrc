@@ -19,7 +19,6 @@ set background=dark
 " colorscheme monrovia
 " let g:solarized_termcolors=256
 colorscheme solarized
-
 " enable line numbers
 set number
 set relativenumber
@@ -60,6 +59,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " make an always visible list of buffers (press Tab on command line)
 set wildchar=<Tab> wildmenu wildmode=full
+" leave panes open when closing buffer
+command BD bp\|bd \#
 
 " SPLITS
 set splitbelow
@@ -74,6 +75,8 @@ nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_dotfiles = 1
+"let g:ctrlp_prompt_mappings
+
 " NERDTree config
 let NERDTreeShowHidden=1
 

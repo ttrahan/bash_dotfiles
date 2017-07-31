@@ -162,7 +162,7 @@ local dellLayout = {
     {"Safari", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"Evernote", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen2, hs.layout.left50, nil, nil},
-    {"iTerm2", nil, monitorScreen2, hs.layout.right50, nil, nil},
+    {"iTerm2", nil, monitorScreen2, hs.layout.maximized, nil, nil},
     {"Close.io", nil, monitorScreen2, hs.layout.maximized, nil, nil},
     {"Keynote", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
