@@ -32,3 +32,4 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 # Go
 export GOPATH="$HOME/goWork"
+

@@ -22,6 +22,7 @@ pairs=( \
   # other
   [PhantomJS 2.1]=/Users/tomtra/tools/phantomjs-2.1.1-macosx/bin/phantomjs \
   [Go]=/usr/local/go/bin \
+  [Gradle]=/usr/local/bin/gradle
 )
 
 for i in "${!pairs[@]}"; do

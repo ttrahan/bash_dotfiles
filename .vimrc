@@ -11,6 +11,12 @@ set encoding=utf-8
 set clipboard=unnamed
 set mouse=a
 
+" VIM MAPPING DEFAULTS
+" remap the shortcut activation key to the comma key
+let mapleader = ","
+" remap the action to leave Insert mode
+inoremap jk <ESC>
+
 " APPEARANCE
 set colorcolumn=80
 set background=dark
@@ -37,20 +43,27 @@ set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" MAPPING 
-" remap the shortcut activation key to the spacebar
-let mapleader = ","
-" remap the action to leave Insert mode
-inoremap jk <ESC>
-" create mapping to delete a word with leader+d, doesn't add to register
-nnoremap <leader>d "_d
+" NAVIGATION
 " remap C-w to use leader key
 nnoremap <Leader>w <C-W>
 " move by virtual lines when no count, physical lines if count
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" change default split behavior
+set splitbelow
+set splitright
+" easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
-
+" EDITING
+" shortcuts to insert blank line without entering insert mode
+nnoremap <S-Enter> O<Esc>
+nnoremap <CR> o<Esc>
+" create mapping to delete a word with leader+d, doesn't add to register
+nnoremap <leader>d "_d
 
 " BUFFERS 
 " Enable the list of buffers
@@ -59,12 +72,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " make an always visible list of buffers (press Tab on command line)
 set wildchar=<Tab> wildmenu wildmode=full
-" leave panes open when closing buffer
-command BD bp\|bd \#
-
-" SPLITS
-set splitbelow
-set splitright
 
 " REGISTERS
 " List contents of all registers (that typically contain pasteable text).
@@ -77,9 +84,6 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_dotfiles = 1
 "let g:ctrlp_prompt_mappings
 
-" NERDTree config
-let NERDTreeShowHidden=1
-
 " SYNTAX HIGHLIGHTING
 syntax enable
 " Syntastic config
@@ -90,10 +94,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" enable Python support in Neovim
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+" Groovy syntax
+au BufNewFile,BufRead *.groovy setf groovy
 
 " COMMENTING
 " nerdcommenter config
@@ -113,9 +115,25 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+" NERDTree config
+let NERDTreeShowHidden=1
+
+" enable Python support in Neovim
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Typescript settings
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
 autocmd FileType typescript JsPreTmpl html
+
+" Ragtag settings for xml/xhtml editing
+inoremap <M-o> <ESC>o
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+let g:ragtag_global_maps = 1
+
