@@ -145,30 +145,32 @@ local laptopLayout = {
     {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Atom", nil, laptopScreen, hs.layout.left50, nil, nil},
-    {"iTerm2", nil, laptopScreen, hs.layout.right50, nil, nil}
+    {"iTerm2", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
 local syncmasterLayout = {
-    {"Google Chrome", nil, monitorScreen1, hs.layout.left50, nil, nil},
-    {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
-    {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
-    {"iTerm2", nil, monitorScreen1, hs.layout.right50, nil, nil},
-    {"REAPER", nil, monitorScreen1, hs.layout.maximized, nil, nil},
-    {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Google Chrome", nil, laptopScreen, hs.layout.left50, nil, nil},
     {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
+    {"Evernote", nil, monitorScreen1, hs.layout.left50, nil, nil},
+    {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
+    {"iTerm2", nil, monitorScreen1, hs.layout.maximized, nil, nil},
+    {"Close.io", nil, monitorScreen1, hs.layout.maximized, nil, nil},
+    {"Slack", nil, monitorScreen1, hs.layout.maximized, nil, nil},
+    {"REAPER", nil, monitorScreen1, hs.layout.maximized, nil, nil},
     {"Spotify", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"X-AIR-Edit", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
 local dellLayout = {
+    {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Keynote", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
+    {"TextEdit", nil, laptopScreen, hs.layout.right30, nil, nil},
     {"Safari", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"Evernote", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen2, hs.layout.left50, nil, nil},
     {"iTerm2", nil, monitorScreen2, hs.layout.maximized, nil, nil},
     {"Close.io", nil, monitorScreen2, hs.layout.maximized, nil, nil},
-    {"Keynote", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"TextEdit", nil, laptopScreen, hs.layout.right30, nil, nil},
-    {"Slack", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil}
+    {"Slack", nil, monitorScreen2, hs.layout.maximized, nil, nil}
 }
 function applyMonitorLayout ()
   if hs.screen.findByName(monitorScreen1) then

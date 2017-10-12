@@ -57,6 +57,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
+" easier page up/down navigation
+" down
+nnoremap <Leader>f <C-F>
+" up
+nnoremap <Leader>b <C-B>
 
 " EDITING
 " shortcuts to insert blank line without entering insert mode
@@ -72,6 +77,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " make an always visible list of buffers (press Tab on command line)
 set wildchar=<Tab> wildmenu wildmode=full
+" leave panes open when closing buffer
+command BD bp|bd #
 
 " REGISTERS
 " List contents of all registers (that typically contain pasteable text).
