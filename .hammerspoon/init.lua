@@ -148,9 +148,9 @@ local laptopLayout = {
     {"iTerm2", nil, laptopScreen, hs.layout.maximized, nil, nil}
 }
 local syncmasterLayout = {
-    {"Google Chrome", nil, laptopScreen, hs.layout.left50, nil, nil},
+    {"Google Chrome", nil, laptopScreen, hs.layout.maximized, nil, nil},
     {"Finder", nil, laptopScreen, hs.layout.maximized, nil, nil},
-    {"Safari", nil, monitorScreen1, hs.layout.left50, nil, nil},
+    {"Safari", nil, monitorScreen1, hs.layout.maximized, nil, nil},
     {"Evernote", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"Atom", nil, monitorScreen1, hs.layout.left50, nil, nil},
     {"iTerm2", nil, monitorScreen1, hs.layout.maximized, nil, nil},
