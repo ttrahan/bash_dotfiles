@@ -31,5 +31,5 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 # Go
-export GOPATH="$HOME/goWork"
+export GOPATH="$HOME/go:$HOME/goWork"
 

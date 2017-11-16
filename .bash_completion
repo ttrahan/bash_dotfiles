@@ -2,6 +2,9 @@
 
 # add name and path to Bash Completion binaries that can be sourced directly
 # below
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 declare -A pairsSourced
 pairsSourced=( \
   [Git]=$HOME'/.git-completion.bash' \
