@@ -37,11 +37,12 @@ filetype plugin indent on
 " wrap indented lines at the indent level
 set breakindent
 " show existing tab with 4 spaces width
-set tabstop=2
+set tabstop=4
 " when indenting with '>', use 4 spaces width
-set shiftwidth=2
-" On pressing tab, insert 4 spaces
-set expandtab
+set shiftwidth=4
+" On pressing tab, insert 4 spaces, or turn off tab expansion
+"set expandtab
+set noexpandtab
 
 " NAVIGATION
 " remap C-w to use leader key
