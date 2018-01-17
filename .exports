@@ -4,7 +4,7 @@
 export NVM_DIR="$HOME/.nvm"
 
 # set default editor
-export EDITOR="atom -nw"
+export EDITOR="vim"
 
 # set to enable colorized output for ls command in Mac OSx terminal
 export CLICOLOR=1
@@ -31,5 +31,5 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 # Go
-export GOPATH="$HOME/go:$HOME/goWork"
+export GOPATH="$HOME/go:$HOME/go"
 

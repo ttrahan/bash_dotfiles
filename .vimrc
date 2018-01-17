@@ -6,10 +6,10 @@
 execute pathogen#infect()
 
 " BASICS 
-filetype plugin indent on
 set encoding=utf-8
 set clipboard=unnamed
 set mouse=a
+filetype plugin on
 
 " VIM MAPPING DEFAULTS
 " remap the shortcut activation key to the comma key
@@ -27,7 +27,7 @@ set background=dark
 colorscheme solarized
 " enable line numbers
 set number
-set relativenumber
+" set relativenumber
 " highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE 
 " guifg=DarkGrey guibg=NONE
 
@@ -54,10 +54,10 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 set splitbelow
 set splitright
 " easier split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-L> <C-W><C-L>
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 " easier page up/down navigation
 " down
 nnoremap <Leader>f <C-F>
@@ -79,7 +79,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " make an always visible list of buffers (press Tab on command line)
 set wildchar=<Tab> wildmenu wildmode=full
 " leave panes open when closing buffer
-command BD bp|bd #
+" command BD bp|bd #
 
 " REGISTERS
 " List contents of all registers (that typically contain pasteable text).
