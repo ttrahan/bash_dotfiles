@@ -20,3 +20,6 @@ if [ -f '/Users/tomtra/google-cloud-sdk/path.bash.inc' ]; then source '/Users/to
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tomtra/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/tomtra/google-cloud-sdk/completion.bash.inc'; fi
+
+# added by Anaconda3 5.1.0 installer
+export PATH="/anaconda3/bin:$PATH"

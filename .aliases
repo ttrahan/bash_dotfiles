@@ -8,8 +8,8 @@ alias vim2='/Applications/MacVim.app'
 alias vim="nvim"
 
 # set alias to use this version of python
-alias python='/usr/bin/python'
-alias python35='/usr/local/bin/python3.5'
+alias python2='/usr/bin/python'
+alias python='/usr/local/bin/python3'
 
 # alias ls command to colorize, make size human readable, add type indicator
 export LSCOLORS=ExFxBxDxCxegedabagacad
