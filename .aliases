@@ -30,9 +30,10 @@ alias gpu='git push'
 alias gpuo='git push origin'
 alias gpuom='git push origin master'
 alias grv='git remote -v'
+# git log one line output
 alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+# git log with changed files
 alias glg2='git log --date-order --all --graph --name-status --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
-alias ghs='git hist'
 
 # docker commands simplified
 # **************************

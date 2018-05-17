@@ -5,23 +5,24 @@
 # add name and path to binaries that can be exported directly below
 declare -A pairs
 pairs=( \
-  [home bin]=$HOME'/bin' \
-  [home local bin]=$HOME'/local/bin' \
+  # [home bin]=$HOME'/bin' \
+  # [home local bin]=$HOME'/local/bin' \
   [user local sbin]=/usr/local/sbin \
   # [Python 2.7]=/usr/bin/python2.7 \
   # CLIs
   [AWS CLI]=/usr/local/bin/aws \
-  [Terraform CLI]=$HOME'/tools/terraform/terraform' \
-  [Go programs]=$GOPATH/bin \
+  # [Terraform CLI]=$HOME'/tools/terraform/terraform' \
+  # [Go programs]=$GOPATH/bin \
   # installed via Homebrew
   [MongoDB (Homebrew)]=/usr/local/bin/mongo \
-  [MySQL (Homebrew)]=/usr/local/mysql/bin \
+  # [MySQL (Homebrew)]=/usr/local/mysql/bin \
+
   [jq (Homebrew)]=/usr/local/bin/jq \
-  [gettext (Homebrew)]=/usr/local/bin/gettext \
+  # [gettext (Homebrew)]=/usr/local/bin/gettext \
   # other
-  [PhantomJS 2.1]=/Users/tomtra/tools/phantomjs-2.1.1-macosx/bin/phantomjs \
-  [Go]=/usr/local/go/bin \
-  [Gradle]=/usr/local/bin/gradle
+  # [PhantomJS 2.1]=/Users/tomtra/tools/phantomjs-2.1.1-macosx/bin/phantomjs \
+  # [Go]=/usr/local/go/bin \
+  [Anaconda]=/anaconda3/bin
 )
 
 for i in "${!pairs[@]}"; do
@@ -35,10 +36,10 @@ done
 
 # add to Path binaries that can't be exported directly below
 
-# Google Cloud SDK.
-if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
-  source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
-fi
+# # Google Cloud SDK.
+# if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
+#   source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
+# fi
 
 # # virtualenvwrapper (for Python)
 # if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then

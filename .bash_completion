@@ -8,7 +8,7 @@
 declare -A pairsSourced
 pairsSourced=( \
   [Git]=$HOME'/.git-completion.bash' \
-  [Google Cloud SDK]=$HOME'/google-cloud-sdk/completion.bash.inc' \
+  # [Google Cloud SDK]=$HOME'/google-cloud-sdk/completion.bash.inc' \
   [RabbitMQ]=/usr/local/etc/bash_completion.d/rabbitmqadmin.bash \
   [Homebrew]=/usr/local/etc/bash_completion.d/brew \
 )
