@@ -1,7 +1,6 @@
-" search pattern to look for conflicting key mappings with new plugin:
-" \vn(nore)?map\s+\<c-[hjkl]\> (replace the <...> pattern with plugin values)
-
 " PACKAGE MANAGER 
+"
+"
 " add runtime path manipulation to Vim
 execute pathogen#infect()
 
