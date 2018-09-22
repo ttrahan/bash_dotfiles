@@ -14,7 +14,7 @@ pairs=( \
   # [Terraform CLI]=$HOME'/tools/terraform/terraform' \
   # [Go programs]=$GOPATH/bin \
   # installed via Homebrew
-  [MongoDB (Homebrew)]=/usr/local/bin/mongo \
+  # [MongoDB (Homebrew)]=/usr/local/bin/mongo \
   # [MySQL (Homebrew)]=/usr/local/mysql/bin \
 
   [jq (Homebrew)]=/usr/local/bin/jq \
@@ -22,7 +22,7 @@ pairs=( \
   # other
   # [PhantomJS 2.1]=/Users/tomtra/tools/phantomjs-2.1.1-macosx/bin/phantomjs \
   # [Go]=/usr/local/go/bin \
-  [Anaconda]=/anaconda3/bin
+  # [Anaconda]=/anaconda3/bin
 )
 
 for i in "${!pairs[@]}"; do
@@ -34,14 +34,3 @@ for i in "${!pairs[@]}"; do
   fi
 done
 
-# add to Path binaries that can't be exported directly below
-
-# # Google Cloud SDK.
-# if [[ -f /Users/tomtra/google-cloud-sdk/path.bash.inc ]]; then
-#   source '/Users/tomtra/google-cloud-sdk/path.bash.inc'
-# fi
-
-# # virtualenvwrapper (for Python)
-# if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-#   source '/usr/local/bin/virtualenvwrapper.sh'
-# fi

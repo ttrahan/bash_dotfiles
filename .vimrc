@@ -43,6 +43,9 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces, or turn off tab expansion
 "set expandtab
 set noexpandtab
+" set tabstops for particular filetypes
+autocmd Filetype yml setlocal tabstop=2 shiftwidth=2
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2
 
 " NAVIGATION
 " remap C-w to use leader key

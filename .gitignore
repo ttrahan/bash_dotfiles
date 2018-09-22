@@ -1,1 +1,4 @@
 .extra
+node_modules*
+Session.vim
+.tmux*
