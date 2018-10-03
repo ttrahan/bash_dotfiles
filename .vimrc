@@ -4,6 +4,7 @@
 " add runtime path manipulation to Vim
 execute pathogen#infect()
 
+
 " BASICS 
 set encoding=utf-8
 set clipboard=unnamed
@@ -29,6 +30,7 @@ set number
 " set relativenumber
 " highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE 
 " guifg=DarkGrey guibg=NONE
+" make the statusline visible
 
 " SPACING 
 " tabs to spaces conversion
@@ -45,6 +47,7 @@ set noexpandtab
 " set tabstops for particular filetypes
 autocmd Filetype yml setlocal tabstop=2 shiftwidth=2
 autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2
+autocmd Filetype pug setlocal tabstop=2 shiftwidth=2
 
 " NAVIGATION
 " remap C-w to use leader key
