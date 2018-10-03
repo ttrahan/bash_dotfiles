@@ -1,6 +1,5 @@
 " PACKAGE MANAGER 
 "
-"
 " add runtime path manipulation to Vim
 execute pathogen#infect()
 
@@ -28,7 +27,7 @@ colorscheme solarized
 " enable line numbers
 set number
 " set relativenumber
-" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE 
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE 
 " guifg=DarkGrey guibg=NONE
 " make the statusline visible
 
@@ -97,6 +96,9 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_dotfiles = 1
 "let g:ctrlp_prompt_mappings
 
+" " FUGITIVE SETTINGS 
+" set statusline+=%{FugitiveStatusline()}
+
 " SYNTAX HIGHLIGHTING
 syntax enable
 " Syntastic config
@@ -107,6 +109,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
 " Groovy syntax
 au BufNewFile,BufRead *.groovy setf groovy
 
