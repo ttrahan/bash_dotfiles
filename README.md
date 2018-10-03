@@ -7,7 +7,8 @@ Installation with submodules for .vim bundles:
 git clone --recursive git@github.com:ttrahan/dotfiles.git
 ```
 
-Create symlinks to $HOME directory:
+Create symlinks to $HOME directory (use relative directories for directories below ~ 
+to avoid issues with different user names on different machines:
 ```bash
 ln -s ~/dotfiles/.bash_profile ~
 # for Vim config
@@ -26,6 +27,12 @@ To update submodules:
 git submodule foreach git pull
 ```
 
+The YouCompleteMe plugin requires an additional install step after updating the submodule:
+```bash
+cd ~/dotfiles/.vim/bundle/youcompleteme
+./install.py
+```
+
 To use Neovim and Python-enabled Vim plugins (note 'vim' aliased to 'nvim' by default - remove from .aliases if not using Neovim):
 ```bash
 brew install neovim/neovim/neovim
@@ -35,7 +42,7 @@ pip2 install neovim --upgrade
 pip3 install neovim --upgrade
 ```
 
-Some of files require Bash 4.x (e.g. .path). Upgrade on a Mac as follows:
+Some of the files require Bash 4.x (e.g. .path). Upgrade on a Mac as follows:
   * Update homebrew packet database and install bash:
     ```
     $ brew update && brew install bash
