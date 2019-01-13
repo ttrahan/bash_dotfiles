@@ -20,6 +20,8 @@ ln -s ~/dotfiles/.hammerspoon/ ~
 ln -s ~/dotfiles/.vim ~/dotfiles/.config/nvim
 ln -s ~/dotfiles/.vimrc ~/dotfiles/.config/nvim/init.vim
 ln -s ~/dotfiles/.config/nvim ~/.config
+# for tmux
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ```
 
 To update submodules:
@@ -41,6 +43,14 @@ brew install python3
 pip2 install neovim --upgrade
 pip3 install neovim --upgrade
 ```
+
+To use tmux plugin manager (tpm):
+```bash
+cd ~
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+Then, install tmux plugins:
+* Within tmux, prefix + I (capital I) to fetch all plugins
 
 Some of the files require Bash 4.x (e.g. .path). Upgrade on a Mac as follows:
   * Update homebrew packet database and install bash:
