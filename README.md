@@ -35,6 +35,12 @@ cd ~/dotfiles/.vim/bundle/youcompleteme
 ./install.py
 ```
 
+Install tools via Homebrew:
+```bash
+brew install tmux
+brew install reattach-To-user-namespace
+```
+
 To use Neovim and Python-enabled Vim plugins (note 'vim' aliased to 'nvim' by default - remove from .aliases if not using Neovim):
 ```bash
 brew install neovim/neovim/neovim
