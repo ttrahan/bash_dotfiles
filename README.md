@@ -26,7 +26,8 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 To update submodules:
 ```bash
-git submodule foreach git pull
+git submodule foreach git pull origin master
+git submodule update --init --recursive
 ```
 
 The YouCompleteMe plugin requires an additional install step after updating the submodule:
