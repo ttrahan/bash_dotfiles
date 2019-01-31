@@ -45,7 +45,7 @@ function launchRabbitMQ() {
 
 # bounce mDNSResponder and cycle dnsmasq, used when DNS resolution not working 
 # on Mac
-function udfBounceDns() {
+function udfDnsBounce() {
   sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
   sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
   sudo launchctl stop homebrew.mxcl.dnsmasq
@@ -56,3 +56,44 @@ function udfBounceDns() {
 function udfFindPattern() {
   grep -rnw . -e "$1"
 }
+
+# read Bluetooth power state
+function udfBluetoothPowerstate() {
+	echo $1
+    DESIRED_STATE=$1
+	if [ -z $DESIRED_STATE ]
+	then
+		#read the current pref, returns '0' for off and '1' for on.
+		POWER_STATE=$(defaults read /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState)
+		if [ $POWER_STATE -eq 0 ]; then
+			echo "Bluetooth power is off"
+		else 
+			echo "Bluetooth power is on"
+		fi
+	else
+		if [ $DESIRED_STATE == "off" ]; then
+			#set bluetooth pref to off
+			sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState 0
+		elif [ $DESIRED_STATE == "on" ]; then
+			#set bluetooth pref to on
+			sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState 1
+		fi
+	fi
+}
+
+# read Bluetooth power state
+function udfBluetoothDeletePlist() {
+	sudo rm /Library/Preferences/com.apple.Bluetooth.plist*
+}
+
+# # bounce Bluetooth service
+# function udfBluetoothBounce() {
+# 	#kill the bluetooth server process
+# 	killall blued
+# 	#unload the daemon 
+# 	launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist
+# 	#reload the daemon
+# 	launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist
+# 	#restart blued daemon true
+# 	launchctl start com.apple.blued
+# }
