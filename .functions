@@ -103,6 +103,22 @@ function udfOrbInfoSearch() {
 	fi
 }
 
+function udfPostgreSqlServer() {
+	echo $1
+	PARAMETER=$1
+	if [ -z $PARAMETER ]; then
+		echo "Provide valid action as parameter"
+	else
+		if [ $PARAMETER == "start" ]; then
+			pg_ctl -D /usr/local/var/postgres start
+		elif [ $PARAMETER == "stop" ]; then
+			pg_ctl -D /usr/local/var/postgres stop
+		elif [ $PARAMETER == "status" ]; then
+			pg_ctl -D /usr/local/var/postgres status	
+		fi
+	fi
+}
+
 # # bounce Bluetooth service
 # function udfBluetoothBounce() {
 # 	#kill the bluetooth server process
@@ -114,3 +130,4 @@ function udfOrbInfoSearch() {
 # 	#restart blued daemon true
 # 	launchctl start com.apple.blued
 # }
+
