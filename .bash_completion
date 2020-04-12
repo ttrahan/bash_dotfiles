@@ -32,3 +32,7 @@ if [[ -f $j ]]; then
 else
   echo $i' bash completion not found...not loaded'
 fi
+
+# dbt
+curl https://raw.githubusercontent.com/fishtown-analytics/dbt-completion.bash/master/dbt-completion.bash > ~/.dbt-completion.bash
+echo 'dbt completion up to date'

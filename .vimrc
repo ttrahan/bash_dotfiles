@@ -154,3 +154,9 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 let g:ragtag_global_maps = 1
 
+" enable SQL syntax highlighting with dbt
+au BufNewFile,BufRead */target/*.sql set ft=text
+
+" show leading spaces and trailing spaces
+set list
+set listchars=tab:›\ ,eol:¬,trail:⋅
