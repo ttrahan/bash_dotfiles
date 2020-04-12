@@ -18,6 +18,11 @@ alias ls='ls -GFh'
 # frequently used terminal commands
 alias prettyjson='python -m json.tool'
 
+# CircleCI commands simplified
+alias ccoi='circleci orb info'
+alias ccl='circleci orb list'
+alias cclu='circleci orb list -u'
+
 # git commamands simplified
 alias gst='git status'
 alias gco='git checkout'
