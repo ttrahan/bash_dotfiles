@@ -48,7 +48,7 @@ set noexpandtab
 "autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2
 autocmd Filetype pug setlocal tabstop=2 shiftwidth=2
 " add yaml stuffs
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
@@ -164,4 +164,4 @@ au BufNewFile,BufRead */target/*.sql set ft=text
 
 " show leading spaces and trailing spaces
 set list
-set listchars=tab:›\ ,eol:¬,trail:⋅
+set listchars=trail:⋅
