@@ -44,9 +44,14 @@ set shiftwidth=4
 "set expandtab
 set noexpandtab
 " set tabstops for particular filetypes
-autocmd Filetype yml setlocal tabstop=2 shiftwidth=2
-autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2
+"autocmd Filetype yml setlocal tabstop=2 shiftwidth=2
+"autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2
 autocmd Filetype pug setlocal tabstop=2 shiftwidth=2
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
 
 " NAVIGATION
 " remap C-w to use leader key
